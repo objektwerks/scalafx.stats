@@ -12,41 +12,52 @@ object StatsApp extends JFXApp {
   private val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
   private val ys = Vector[Double](1.5, 2.5, 3.25, 3.5, 4.25, 4.75, 5.5)
 
-  val xsLabel = new Label {
-    text = "XS Data: " + xs.mkString(", ")
+  val dataLabel = new Label {
+    id = "data-label"
+    text = "Data"
     padding = Insets(3)
   }
 
+  val xsLabel = new Label {
+    text = "xs: " + xs.mkString(", ")
+  }
+
   val ysLabel = new Label {
-    text = "YS Data: " + ys.mkString(", ")
+    text = "ys: " + ys.mkString(", ")
+  }
+
+  val statsLabel = new Label {
+    id = "stats-label"
+    text = "Stats"
     padding = Insets(3)
   }
 
   val meanLabel = new Label {
-    text = "XS Mean: " + mean(xs)
-    padding = Insets(3)
+    text = "xs mean: " + mean(xs)
   }
 
   val medianLabel = new Label {
-    text = "XS Median: " + median(xs)
-    padding = Insets(3)
+    text = "xs median: " + median(xs)
   }
 
   val modeLabel = new Label {
-    text = "XS Mode: " + mode(xs)
-    padding = Insets(3)
+    text = "xs mode: " + mode(xs)
+  }
+
+  val rangeLabel = new Label {
+    text = "xs range: " + range(xs)
   }
 
   val data = new VBox {
-    spacing = 6
-    padding = Insets(6)
-    children = List(xsLabel, ysLabel)
+    spacing = 3
+    padding = Insets(3)
+    children = List(dataLabel, xsLabel, ysLabel)
   }
 
   val stats = new VBox {
-    spacing = 6
-    padding = Insets(6)
-    children = List(meanLabel, medianLabel, modeLabel)
+    spacing = 3
+    padding = Insets(3)
+    children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel)
   }
 
   val content = new VBox {
@@ -68,6 +79,7 @@ object StatsApp extends JFXApp {
   stage = new JFXApp.PrimaryStage {
     title.value = "Stats"
     scene = new Scene {
+      stylesheets.add("stats.css")
       root = pane
     }
   }
