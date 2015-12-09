@@ -1,5 +1,7 @@
 package stats
 
+import stats.Stats._
+
 import scalafx.application.JFXApp
 import scalafx.geometry.Insets
 import scalafx.scene.Scene
@@ -12,18 +14,45 @@ object StatsApp extends JFXApp {
 
   val xsLabel = new Label {
     text = "XS Data: " + xs.mkString(", ")
+    padding = Insets(3)
   }
 
   val ysLabel = new Label {
     text = "YS Data: " + ys.mkString(", ")
+    padding = Insets(3)
   }
 
-  val content = new VBox {
-    maxWidth = 400
-    maxHeight = 400
+  val meanLabel = new Label {
+    text = "XS Mean: " + mean(xs)
+    padding = Insets(3)
+  }
+
+  val medianLabel = new Label {
+    text = "XS Median: " + median(xs)
+    padding = Insets(3)
+  }
+
+  val modeLabel = new Label {
+    text = "XS Mode: " + mode(xs)
+    padding = Insets(3)
+  }
+
+  val data = new VBox {
     spacing = 6
     padding = Insets(6)
     children = List(xsLabel, ysLabel)
+  }
+
+  val stats = new VBox {
+    spacing = 6
+    padding = Insets(6)
+    children = List(meanLabel, medianLabel, modeLabel)
+  }
+
+  val content = new VBox {
+    spacing = 6
+    padding = Insets(6)
+    children = List(data, stats)
   }
 
   val toolbar = new ToolBar {
@@ -31,8 +60,6 @@ object StatsApp extends JFXApp {
   }
 
   val pane = new VBox {
-    maxWidth = 400
-    maxHeight = 400
     spacing = 6
     padding = Insets(6)
     children = List(toolbar, content)
