@@ -48,6 +48,10 @@ object StatsApp extends JFXApp {
     text = "xs range: " + range(xs)
   }
 
+  val varianceLabel = new Label {
+    text = "xs variance: " + variance(xs)
+  }
+
   val data = new VBox {
     spacing = 3
     padding = Insets(3)
@@ -57,7 +61,7 @@ object StatsApp extends JFXApp {
   val stats = new VBox {
     spacing = 3
     padding = Insets(3)
-    children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel)
+    children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, varianceLabel)
   }
 
   val content = new VBox {
