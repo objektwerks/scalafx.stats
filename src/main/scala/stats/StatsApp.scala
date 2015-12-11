@@ -82,12 +82,14 @@ object StatsApp extends JFXApp {
   }
 
   val data = new VBox {
+    id = "data-vbox"
     spacing = 3
     padding = Insets(3)
     children = List(dataLabel, xsLabel, ysLabel, scatterChart)
   }
 
   val stats = new VBox {
+    id = "stats-vbox"
     spacing = 3
     padding = Insets(3)
     children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, histogramLabel, varianceLabel,

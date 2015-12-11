@@ -5,3 +5,10 @@
 #stats-label {
     -fx-font-weight: bold;
 }
+#data-vbox {
+    -fx-border-color: lightgray;
+}
+
+#stats-vbox {
+    -fx-border-color: lightgray;
+}
