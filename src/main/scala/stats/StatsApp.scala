@@ -41,15 +41,35 @@ object StatsApp extends JFXApp {
   }
 
   val modeLabel = new Label {
-    text = "xs mode: " + mode(xs)
+    text = "xs mode: " + mode(xs).mkString(", ")
   }
 
   val rangeLabel = new Label {
     text = "xs range: " + range(xs)
   }
 
+  val histogramLabel = new Label {
+    text = "xs histogram: " + histogram(xs).mkString(", ")
+  }
+
   val varianceLabel = new Label {
     text = "xs variance: " + variance(xs)
+  }
+
+  val standardDeviationLabel = new Label {
+    text = "xs standard deviation: " + standardDeviation(xs)
+  }
+
+  val standardErrorLabel = new Label {
+    text = "xs standard error: " + standardError(xs)
+  }
+
+  val covarianceLabel = new Label {
+    text = "xs, ys covariance: " + covariance(xs, ys)
+  }
+
+  val correlationCoefficientLabel = new Label {
+    text = "xs, ys correlation coefficient: " + correlationCoefficient(xs, ys)
   }
 
   val data = new VBox {
@@ -61,7 +81,8 @@ object StatsApp extends JFXApp {
   val stats = new VBox {
     spacing = 3
     padding = Insets(3)
-    children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, varianceLabel)
+    children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, histogramLabel, varianceLabel,
+      standardDeviationLabel, standardErrorLabel, covarianceLabel)
   }
 
   val content = new VBox {
