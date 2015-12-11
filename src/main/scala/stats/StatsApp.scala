@@ -1,12 +1,17 @@
 package stats
 
+import javafx.scene.{chart => jfxsc}
+
 import stats.Stats._
 
+import scalafx.Includes._
 import scalafx.application.JFXApp
+import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Scene
+import scalafx.scene.chart.{NumberAxis, ScatterChart, XYChart}
 import scalafx.scene.control._
-import scalafx.scene.layout.VBox
+import scalafx.scene.layout.{HBox, VBox}
 
 object StatsApp extends JFXApp {
   private val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
@@ -25,6 +30,10 @@ object StatsApp extends JFXApp {
   val ysLabel = new Label {
     text = "ys: " + ys.mkString(", ")
   }
+
+  val scatterChart = ScatterChart(NumberAxis(axisLabel = "x", lowerBound = 0.0, upperBound = 6.0, tickUnit = 0.5),
+                                  NumberAxis(axisLabel = "y", lowerBound = 0.0, upperBound = 6.0, tickUnit = 0.5),
+                                  buildScatterChartData())
 
   val statsLabel = new Label {
     id = "stats-label"
@@ -75,7 +84,7 @@ object StatsApp extends JFXApp {
   val data = new VBox {
     spacing = 3
     padding = Insets(3)
-    children = List(dataLabel, xsLabel, ysLabel)
+    children = List(dataLabel, xsLabel, ysLabel, scatterChart)
   }
 
   val stats = new VBox {
@@ -85,7 +94,7 @@ object StatsApp extends JFXApp {
       standardDeviationLabel, standardErrorLabel, covarianceLabel)
   }
 
-  val content = new VBox {
+  val content = new HBox {
     spacing = 6
     padding = Insets(6)
     children = List(data, stats)
@@ -107,5 +116,16 @@ object StatsApp extends JFXApp {
       stylesheets.add("stats.css")
       root = pane
     }
+  }
+
+  private def buildScatterChartData(): ObservableBuffer[jfxsc.XYChart.Series[Number, Number]] = {
+    val model = new ObservableBuffer[jfxsc.XYChart.Series[Number, Number]]()
+    val xsSeries = new XYChart.Series[Number, Number] { name = "xs" }
+    xs.foreach { x => xsSeries.data() += XYChart.Data[Number, Number](x, x) }
+    val ysSeries = new XYChart.Series[Number, Number] { name = "ys" }
+    ys.foreach { y => ysSeries.data() += XYChart.Data[Number, Number](y, y) }
+    model += xsSeries
+    model += ysSeries
+    model
   }
 }
