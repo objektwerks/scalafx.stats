@@ -102,14 +102,10 @@ object StatsApp extends JFXApp {
     children = List(data, stats)
   }
 
-  val toolbar = new ToolBar {
-    content = List()
-  }
-
   val pane = new VBox {
     spacing = 6
     padding = Insets(6)
-    children = List(toolbar, content)
+    children = List(content)
   }
 
   stage = new JFXApp.PrimaryStage {
