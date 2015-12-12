@@ -111,7 +111,7 @@ object StatsApp extends JFXApp {
   stage = new JFXApp.PrimaryStage {
     title.value = "Stats"
     scene = new Scene {
-      stylesheets.add("stats.css")
+      stylesheets.add("stats.app.css")
       root = pane
     }
   }
