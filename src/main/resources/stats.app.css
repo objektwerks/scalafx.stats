@@ -4,9 +4,9 @@
 #stats-label {
     -fx-font-weight: bold;
 }
-#data-vbox {
+#data-pane {
     -fx-border-color: lightgray;
 }
-#stats-vbox {
+#stats-pane {
     -fx-border-color: lightgray;
 }

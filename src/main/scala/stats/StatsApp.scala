@@ -82,37 +82,37 @@ object StatsApp extends JFXApp {
   }
 
   val data = new VBox {
-    id = "data-vbox"
+    id = "data-pane"
     spacing = 3
     padding = Insets(3)
     children = List(dataLabel, xsLabel, ysLabel, scatterChart)
   }
 
   val stats = new VBox {
-    id = "stats-vbox"
+    id = "stats-pane"
     spacing = 3
     padding = Insets(3)
     children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, histogramLabel, varianceLabel,
       standardDeviationLabel, standardErrorLabel, covarianceLabel)
   }
 
-  val content = new HBox {
+  val dataStatsPane = new HBox {
     spacing = 6
     padding = Insets(6)
     children = List(data, stats)
   }
 
-  val pane = new VBox {
+  val contentPane = new VBox {
     spacing = 6
     padding = Insets(6)
-    children = List(content)
+    children = List(dataStatsPane)
   }
 
   stage = new JFXApp.PrimaryStage {
     title.value = "Stats"
     scene = new Scene {
       stylesheets.add("stats.app.css")
-      root = pane
+      root = contentPane
     }
   }
 
