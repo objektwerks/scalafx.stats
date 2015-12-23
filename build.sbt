@@ -6,7 +6,7 @@ libraryDependencies ++= {
   Seq(
     "org.apache.spark" % "spark-mllib_2.11" % "1.5.2",
     "org.scalafx" % "scalafx_2.11" % "8.0.60-R9",
-    "org.slf4j" % "slf4j-api" % "1.7.12" % "test",
+    "org.slf4j" % "slf4j-api" % "1.7.13" % "test",
     "org.scalatest" % "scalatest_2.11" % "2.2.5" % "test"
   )
 }
