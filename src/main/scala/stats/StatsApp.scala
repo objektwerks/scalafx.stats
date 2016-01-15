@@ -14,8 +14,8 @@ import scalafx.scene.control._
 import scalafx.scene.layout.{HBox, VBox}
 
 object StatsApp extends JFXApp {
-  private val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
-  private val ys = Vector[Double](1.5, 2.5, 3.25, 3.5, 4.25, 4.75, 5.5)
+  val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
+  val ys = Vector[Double](1.5, 2.5, 3.25, 3.5, 4.25, 4.75, 5.5)
 
   val dataLabel = new Label {
     id = "data-label"
