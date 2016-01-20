@@ -1,12 +1,11 @@
-name := "objektwerks.scala.stats.ml"
+name := "objektwerks.scala.stats"
 version := "0.1"
 scalaVersion := "2.11.7"
 ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 libraryDependencies ++= {
   Seq(
     "org.scalafx" % "scalafx_2.11" % "8.0.60-R9",
-    "org.slf4j" % "slf4j-api" % "1.7.13" % "test",
-    "org.scalatest" % "scalatest_2.11" % "2.2.5" % "test"
+    "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test"
   )
 }
 unmanagedJars in Compile += Attributed.blank(file(System.getenv("JAVA_HOME") + "/jre/lib/ext/jfxrt.jar"))
