@@ -1,22 +1,28 @@
 name := "scala.stats"
 organization := "objektwerks"
-version := "0.1-SNAPSHOT"
-scalaVersion := "2.11.8"
+version := "0.1"
+scalaVersion := "2.12.1"
 ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 libraryDependencies ++= {
   Seq(
-    "org.scalafx" % "scalafx_2.11" % "8.0.92-R10",
-    "org.scalatest" % "scalatest_2.11" % "3.0.0" % "test"
+    "org.scalafx" % "scalafx_2.12" % "8.0.102-R11",
+    "org.scalatest" % "scalatest_2.12" % "3.0.1" % "test"
   )
 }
 scalacOptions ++= Seq(
   "-language:postfixOps",
+  "-language:reflectiveCalls",
   "-language:implicitConversions",
+  "-language:higherKinds",
   "-feature",
+  "-Ywarn-unused-import",
+  "-Ywarn-unused",
+  "-Ywarn-dead-code",
   "-unchecked",
   "-deprecation",
-  "-Xlint",
-  "-Xfatal-warnings"
+  "-Xfatal-warnings",
+  "-Xlint:missing-interpolator",
+  "-Xlint"
 )
 fork in test := true
 unmanagedJars in Compile += Attributed.blank(file(System.getenv("JAVA_HOME") + "/jre/lib/ext/jfxrt.jar"))
