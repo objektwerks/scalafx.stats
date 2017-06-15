@@ -1,12 +1,12 @@
 name := "scala.stats"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.2"
 ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 libraryDependencies ++= {
   Seq(
     "org.scalafx" % "scalafx_2.12" % "8.0.102-R11",
-    "org.scalatest" % "scalatest_2.12" % "3.0.1" % "test"
+    "org.scalatest" % "scalatest_2.12" % "3.0.3" % "test"
   )
 }
 scalacOptions ++= Seq(
