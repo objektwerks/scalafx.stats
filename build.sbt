@@ -1,8 +1,7 @@
 name := "scala.stats"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.12.2"
-ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
+scalaVersion := "2.12.3"
 libraryDependencies ++= {
   Seq(
     "org.scalafx" % "scalafx_2.12" % "8.0.102-R11",
