@@ -116,7 +116,7 @@ object StatsApp extends JFXApp {
     }
   }
 
-  private def buildScatterChartData(): ObservableBuffer[jfxsc.XYChart.Series[Number, Number]] = {
+  def buildScatterChartData(): ObservableBuffer[jfxsc.XYChart.Series[Number, Number]] = {
     val model = new ObservableBuffer[jfxsc.XYChart.Series[Number, Number]]()
     val xsSeries = new XYChart.Series[Number, Number] { name = "xs" }
     xs.foreach { x => xsSeries.data() += XYChart.Data[Number, Number](x, x) }
