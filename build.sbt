@@ -8,6 +8,7 @@ libraryDependencies ++= {
     "org.scalatest" % "scalatest_2.12" % "3.0.3" % "test"
   )
 }
+unmanagedJars in Compile += Attributed.blank(file(System.getenv("JAVA_HOME") + "/jre/lib/ext/jfxrt.jar"))
 scalacOptions ++= Seq(
   "-language:postfixOps",
   "-language:reflectiveCalls",
@@ -24,5 +25,3 @@ scalacOptions ++= Seq(
   "-Xlint"
 )
 fork in test := true
-unmanagedJars in Compile += Attributed.blank(file(System.getenv("JAVA_HOME") + "/jre/lib/ext/jfxrt.jar"))
-run in Compile := Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))
