@@ -8,4 +8,4 @@ sbt clean test
 
 Run
 ---
-sbt run
+sbt clean compile run
