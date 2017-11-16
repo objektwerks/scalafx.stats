@@ -64,7 +64,6 @@ object Stats {
     (xsm, ysm)
   }
 
-
   @tailrec
   def factorial(n: Long, acc: Long = 1): Long = n match {
     case i if i <= 0 => acc
