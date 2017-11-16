@@ -81,6 +81,10 @@ object StatsApp extends JFXApp {
     text = "xs, ys correlation coefficient: " + correlationCoefficient(xs, ys)
   }
 
+  val centroidLabel = new Label {
+    text = "xs, ys centroid: " + centroid(xs, ys)
+  }
+
   val data = new VBox {
     id = "data-pane"
     spacing = 3
@@ -93,7 +97,7 @@ object StatsApp extends JFXApp {
     spacing = 3
     padding = Insets(3)
     children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, histogramLabel, varianceLabel,
-      standardDeviationLabel, standardErrorLabel, covarianceLabel)
+      standardDeviationLabel, standardErrorLabel, covarianceLabel, correlationCoefficientLabel, centroidLabel)
   }
 
   val dataStatsPane = new HBox {

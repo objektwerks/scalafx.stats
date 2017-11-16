@@ -48,6 +48,10 @@ class StatsTest extends FunSuite {
     assert(correlationCoefficient(xs, ys) == 0.9919341745639146)
   }
 
+  test("centroid") {
+    assert((3.142857142857143,3.607142857142857) == centroid(xs, ys))
+  }
+
   test("factorial") {
     assert(factorial(9) == 362880)
   }

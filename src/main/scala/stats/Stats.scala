@@ -58,6 +58,13 @@ object Stats {
     (xsys / (xssd * yssd)) / (xs.length - 1)
   }
 
+  def centroid(xs: Vector[Double], ys: Vector[Double]): (Double, Double) = {
+    val xsm = mean(xs)
+    val ysm = mean(ys)
+    (xsm, ysm)
+  }
+
+
   @tailrec
   def factorial(n: Long, acc: Long = 1): Long = n match {
     case i if i <= 0 => acc
