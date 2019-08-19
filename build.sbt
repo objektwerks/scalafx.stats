@@ -5,7 +5,7 @@ scalaVersion := "2.12.9"
 libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "8.0.144-R12",
-    "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+    "org.scalatest" %% "scalatest" % "3.0.8" % Test
   )
 }
 unmanagedJars in Compile += Attributed.blank(file(System.getenv("JAVA_HOME") + "/jre/lib/ext/jfxrt.jar"))
