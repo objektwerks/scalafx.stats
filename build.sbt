@@ -1,10 +1,10 @@
 name := "scala.stats"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.12.9"
+scalaVersion := "2.12.10"
 libraryDependencies ++= {
   Seq(
-    "org.scalafx" %% "scalafx" % "8.0.144-R12",
+    "org.scalafx" %% "scalafx" % "12.0.2-R18",
     "org.scalatest" %% "scalatest" % "3.0.8" % Test
   )
 }
