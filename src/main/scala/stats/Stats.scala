@@ -17,7 +17,7 @@ object Stats {
   def mode(xs: Vector[Double]): Vector[Double] = {
     val hg = histogram(xs)
     val max = hg.values.max
-    hg.filter(_._2 == max).keys.to[Vector]
+    hg.filter(_._2 == max).keys.toVector
   }
 
   def range(xs: Vector[Double]): Double = {
@@ -27,7 +27,7 @@ object Stats {
 
   def histogram(xs: Vector[Double]): SortedMap[Double, Int] = {
     require(xs.nonEmpty, "Nonempty vector required.")
-    TreeMap[Double, Int]() ++ xs.groupBy(x => x).mapValues(_.length)
+    TreeMap[Double, Int]() ++ xs.groupBy(x => x).view.mapValues(_.length).toMap
   }
 
   def variance(xs: Vector[Double]): Double = {
@@ -40,7 +40,7 @@ object Stats {
   }
 
   def standardError(xs: Vector[Double]): Double = {
-    standardDeviation(xs) / math.sqrt(xs.length)
+    standardDeviation(xs) / math.sqrt(xs.length.toDouble)
   }
 
   def covariance(xs: Vector[Double], ys: Vector[Double]): Double = {
@@ -74,13 +74,13 @@ object Stats {
     case _ => factorial(n - 1, acc * n)
   }
 
-  def combinations(n: Int, r: Int): Long = {
+  def combinations(n: Long, r: Long): Long = {
     val dividend = factorial(n)
     val divisor = factorial(r) * factorial(n - r)
     dividend / divisor
   }
 
-  def permutations(n: Int, r: Int): Long = {
+  def permutations(n: Long, r: Long): Long = {
     val dividend = factorial(n)
     val divisor = factorial(n - r)
     dividend / divisor
