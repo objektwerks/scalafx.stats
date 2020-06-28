@@ -1,6 +1,6 @@
-Scala Statistics
-----------------
->The purpose of the project is to explore statistics using Scala.
+ScalaFX Stats
+-------------
+>This project explores statistics using Scala and ScalaFX.
 
 Test
 ----
