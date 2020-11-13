@@ -7,7 +7,7 @@ scalaVersion := "2.13.3"
 libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "14-R19",
-    "org.scalatest" %% "scalatest" % "3.2.2" % Test
+    "org.scalatest" %% "scalatest" % "3.2.3" % Test
   )
 }
 lazy val osName = System.getProperty("os.name") match {
