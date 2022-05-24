@@ -1,6 +1,6 @@
 ScalaFX Stats
 -------------
->This project explores statistics using ScalaFX.
+>Statistics using ScalaFX.
 
 Test
 ----
