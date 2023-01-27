@@ -1,4 +1,4 @@
-package stats
+package objektwerks
 
 import com.typesafe.scalalogging.LazyLogging
 

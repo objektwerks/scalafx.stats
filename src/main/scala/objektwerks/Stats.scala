@@ -1,4 +1,4 @@
-package stats
+package objektwerks
 
 import scala.annotation.tailrec
 import scala.collection.immutable.{SortedMap, TreeMap}

@@ -1,8 +1,8 @@
-package stats
+package objektwerks
 
 import javafx.scene.{chart => jfxsc}
 
-import stats.Stats.*
+import Stats.*
 
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
