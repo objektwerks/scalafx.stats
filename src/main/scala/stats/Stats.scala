@@ -64,10 +64,6 @@ object Stats {
     (xsm, ysm)
   }
 
-  def intercept() = 0 // TODO
-
-  def slope() = 0 // TODO
-
   @tailrec
   def factorial(n: Long, acc: Long = 1): Long = n match {
     case i if i <= 0 => acc
