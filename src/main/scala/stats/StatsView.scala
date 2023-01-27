@@ -21,7 +21,7 @@ final class StatsView:
 
     val ysSeries = new XYChart.Series[Number, Number] { name = "ys" }
     ys.foreach { y => ysSeries.data() += XYChart.Data[Number, Number](y, y) }
-    
+
     model += xsSeries
     model += ysSeries
     model
@@ -92,8 +92,11 @@ final class StatsView:
     id = "stats-pane"
     spacing = 3
     padding = Insets(3)
-    children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, histogramLabel, varianceLabel,
-      standardDeviationLabel, standardErrorLabel, covarianceLabel, correlationCoefficientLabel, centroidLabel)
+    children = List(
+      statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, histogramLabel, varianceLabel,
+      standardDeviationLabel, standardErrorLabel, covarianceLabel, correlationCoefficientLabel,
+      centroidLabel
+    )
 
   val dataStatsPane = new HBox:
     spacing = 6
