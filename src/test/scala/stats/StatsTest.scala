@@ -56,6 +56,10 @@ class StatsTest extends AnyFunSuite {
     assert(factorial(9) == 362880)
   }
 
+  test("fibonacci") {
+    assert(fibonacci(39) == 63245986)
+  }
+
   test("combinations") {
     assert(combinations(10, 3) == 120)
   }
