@@ -13,7 +13,7 @@ import scalafx.scene.control.Label
 import scalafx.scene.layout.{HBox, VBox}
 
 final class StatsView:
-  private def buildScatterChartData(): ObservableBuffer[jfxsc.XYChart.Series[Number, Number]] = {
+  private def buildScatterChartData(): ObservableBuffer[jfxsc.XYChart.Series[Number, Number]] =
     val model = new ObservableBuffer[jfxsc.XYChart.Series[Number, Number]]()
     val xsSeries = new XYChart.Series[Number, Number] { name = "xs" }
     xs.foreach { x => xsSeries.data() += XYChart.Data[Number, Number](x, x) }
@@ -22,7 +22,6 @@ final class StatsView:
     model += xsSeries
     model += ysSeries
     model
-  }
 
   val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
   val ys = Vector[Double](1.5, 2.5, 3.25, 3.5, 4.25, 4.75, 5.5)
