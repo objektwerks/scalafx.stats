@@ -5,7 +5,7 @@ import javafx.scene.{chart => jfxsc}
 import stats.Stats._
 
 import scalafx.Includes._
-import scalafx.application.JFXApp
+import scalafx.application.JFXApp3
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Scene
@@ -13,7 +13,18 @@ import scalafx.scene.chart.{NumberAxis, ScatterChart, XYChart}
 import scalafx.scene.control._
 import scalafx.scene.layout.{HBox, VBox}
 
-object StatsApp extends JFXApp {
+object StatsApp extends JFXApp3 {
+  override def start(): Unit =
+    stage = new JFXApp3.PrimaryStage {
+    scene = new Scene {
+      stylesheets.add("app.css")
+      root = contentPane
+    }
+    title = "Stats"
+  }
+
+  override def stopApp(): Unit = ???
+
   val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
   val ys = Vector[Double](1.5, 2.5, 3.25, 3.5, 4.25, 4.75, 5.5)
 
@@ -110,14 +121,6 @@ object StatsApp extends JFXApp {
     spacing = 6
     padding = Insets(6)
     children = List(dataStatsPane)
-  }
-
-  stage = new JFXApp.PrimaryStage {
-    title.value = "Stats"
-    scene = new Scene {
-      stylesheets.add("app.css")
-      root = contentPane
-    }
   }
 
   def buildScatterChartData(): ObservableBuffer[jfxsc.XYChart.Series[Number, Number]] = {
