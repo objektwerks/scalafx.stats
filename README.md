@@ -13,6 +13,7 @@ ScalaFX Stats
 * correlationCoefficient
 * centroid
 * factorial
+* fibonacci
 * combinations
 * permutations
 * probability
