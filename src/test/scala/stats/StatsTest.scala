@@ -1,7 +1,7 @@
 package stats
 
 import org.scalatest.funsuite.AnyFunSuite
-import stats.Stats._
+import stats.Stats.*
 
 class StatsTest extends AnyFunSuite {
   val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
