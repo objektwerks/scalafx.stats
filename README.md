@@ -1,6 +1,25 @@
 ScalaFX Stats
 -------------
->Statistics app using ScalaFX and Scala 3.
+>Statistics app using ScalaFX and Scala 3, covering:
+
+median
+mode
+range
+histogram
+variance
+standardDeviation
+standardError
+covariance
+correlationCoefficient
+centroid
+
+intercept
+slope
+
+factorial
+combinations
+permutations
+probability
 
 Test
 ----
