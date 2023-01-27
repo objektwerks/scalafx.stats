@@ -2,14 +2,14 @@ package stats
 
 import javafx.scene.{chart => jfxsc}
 
-import stats.Stats._
+import stats.Stats.*
 
-import scalafx.Includes._
+import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Scene
 import scalafx.scene.chart.{NumberAxis, ScatterChart, XYChart}
-import scalafx.scene.control._
+import scalafx.scene.control.Label
 import scalafx.scene.layout.{HBox, VBox}
 
 final class StatsView:
@@ -27,100 +27,81 @@ final class StatsView:
   val xs = Vector[Double](1.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0)
   val ys = Vector[Double](1.5, 2.5, 3.25, 3.5, 4.25, 4.75, 5.5)
 
-  val dataLabel = new Label {
+  val dataLabel = new Label:
     id = "data-label"
     text = "Data"
     padding = Insets(3)
-  }
 
-  val xsLabel = new Label {
+  val xsLabel = new Label:
     text = "xs: " + xs.mkString(", ")
-  }
 
-  val ysLabel = new Label {
+  val ysLabel = new Label:
     text = "ys: " + ys.mkString(", ")
-  }
 
   val scatterChart = ScatterChart(NumberAxis(axisLabel = "x", lowerBound = 0.0, upperBound = 6.0, tickUnit = 0.5),
                                   NumberAxis(axisLabel = "y", lowerBound = 0.0, upperBound = 6.0, tickUnit = 0.5),
                                   buildScatterChartData())
 
-  val statsLabel = new Label {
+  val statsLabel = new Label:
     id = "stats-label"
     text = "Stats"
     padding = Insets(3)
-  }
 
-  val meanLabel = new Label {
+  val meanLabel = new Label:
     text = "xs mean: " + mean(xs)
-  }
 
-  val medianLabel = new Label {
+  val medianLabel = new Label:
     text = "xs median: " + median(xs)
-  }
 
-  val modeLabel = new Label {
+  val modeLabel = new Label:
     text = "xs mode: " + mode(xs).mkString(", ")
-  }
 
-  val rangeLabel = new Label {
+  val rangeLabel = new Label:
     text = "xs range: " + range(xs)
-  }
 
-  val histogramLabel = new Label {
+  val histogramLabel = new Label:
     text = "xs histogram: " + histogram(xs).mkString(", ")
-  }
 
-  val varianceLabel = new Label {
+  val varianceLabel = new Label:
     text = "xs variance: " + variance(xs)
-  }
 
-  val standardDeviationLabel = new Label {
+  val standardDeviationLabel = new Label:
     text = "xs standard deviation: " + standardDeviation(xs)
-  }
 
-  val standardErrorLabel = new Label {
+  val standardErrorLabel = new Label:
     text = "xs standard error: " + standardError(xs)
-  }
 
-  val covarianceLabel = new Label {
+  val covarianceLabel = new Label:
     text = "xs, ys covariance: " + covariance(xs, ys)
-  }
 
-  val correlationCoefficientLabel = new Label {
+  val correlationCoefficientLabel = new Label:
     text = "xs, ys correlation coefficient: " + correlationCoefficient(xs, ys)
-  }
 
-  val centroidLabel = new Label {
+  val centroidLabel = new Label:
     text = "xs, ys centroid: " + centroid(xs, ys)
-  }
 
-  val data = new VBox {
+  val data = new VBox:
     id = "data-pane"
     spacing = 3
     padding = Insets(3)
     children = List(dataLabel, xsLabel, ysLabel, scatterChart)
-  }
 
-  val stats = new VBox {
+  val stats = new VBox:
     id = "stats-pane"
     spacing = 3
     padding = Insets(3)
     children = List(statsLabel, meanLabel, medianLabel, modeLabel, rangeLabel, histogramLabel, varianceLabel,
       standardDeviationLabel, standardErrorLabel, covarianceLabel, correlationCoefficientLabel, centroidLabel)
-  }
 
-  val dataStatsPane = new HBox {
+  val dataStatsPane = new HBox:
     spacing = 6
     padding = Insets(6)
     children = List(data, stats)
-  }
 
-  val contentPane = new VBox {
+  val contentPane = new VBox:
     spacing = 6
     padding = Insets(6)
     children = List(dataStatsPane)
-  }
 
   val scene = new Scene:
     root = contentPane
