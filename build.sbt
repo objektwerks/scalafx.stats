@@ -1,6 +1,6 @@
 name := "scalafx.stats"
 organization := "objektwerks"
-version := "0.2-SNAPSHOT"
+version := "0.2"
 scalaVersion := "3.2.2"
 libraryDependencies ++= {
   Seq(
