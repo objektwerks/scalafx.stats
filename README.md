@@ -1,6 +1,6 @@
 ScalaFX Stats
 -------------
->Statistics using ScalaFX.
+>Statistics app using ScalaFX and Scala 3.
 
 Test
 ----
