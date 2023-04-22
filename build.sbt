@@ -1,7 +1,7 @@
 name := "scalafx.stats"
 organization := "objektwerks"
 version := "0.4-SNAPSHOT"
-scalaVersion := "3.2.2"
+scalaVersion := "3.3.0-RC4"
 libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "20.0.0-R31",
