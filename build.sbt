@@ -7,7 +7,7 @@ libraryDependencies ++= {
     "org.scalafx" %% "scalafx" % "20.0.0-R31",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
     "ch.qos.logback" % "logback-classic" % "1.4.11",
-    "org.scalatest" %% "scalatest" % "3.2.16" % Test
+    "org.scalatest" %% "scalatest" % "3.2.17" % Test
   )
 }
 scalacOptions ++= Seq(
