@@ -1,6 +1,6 @@
 ScalaFX Stats
 -------------
->Statistics app using ScalaFX and Scala 3, covering:
+>Statistics app using ScalaFx and Scala 3, covering:
 
 * median
 * mode
