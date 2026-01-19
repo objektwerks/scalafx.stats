@@ -6,7 +6,7 @@ libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "24.0.2-R36",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
-    "ch.qos.logback" % "logback-classic" % "1.5.23",
+    "ch.qos.logback" % "logback-classic" % "1.5.24",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
